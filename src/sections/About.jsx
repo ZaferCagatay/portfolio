@@ -85,7 +85,7 @@ const About = () => {
               </p>
               <a href="#contact" className="w-fit">
                 <Button
-                  name="Contact Me"
+                  name={t('Contact Me', 'İletişime geç')}
                   isBeam
                   containerClass="w-full mt-10"
                 />
