@@ -54,6 +54,16 @@ const Experience = () => {
                       setAnimationName(animation.toLowerCase())
                     }
                     onPointerOut={() => setAnimationName('idle')}
+                    onTouchStart={
+                      window.innerWidth <= 768
+                        ? () => setAnimationName(animation.toLowerCase())
+                        : undefined
+                    }
+                    onTouchEnd={
+                      window.innerWidth <= 768
+                        ? () => setAnimationName('idle')
+                        : undefined
+                    }
                   >
                     <div className="flex flex-col h-full justify-start items-center py-2">
                       <div className="work-content_logo">

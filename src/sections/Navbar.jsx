@@ -36,17 +36,30 @@ const Navbar = () => {
           >
             Z
           </a>
-          <button
-            onClick={toggleMenu}
-            className="text-neutral-400 hover:text-white focus:outline-none sm:hidden flex"
-            aria-label="Toggle menu"
-          >
-            <img
-              src={isOpen ? 'assets/close.svg' : 'assets/menu.svg'}
-              alt="toggle"
-              className="w-6 h-6"
-            />
-          </button>
+          <div className="sm:hidden flex">
+            <button
+              onClick={toggleLanguage}
+              className="mr-4"
+              aria-label="Change Language"
+            >
+              <img
+                src={language === 'en' ? 'assets/tr.png' : 'assets/en.png'}
+                alt="toggle"
+                className="w-6 h-6"
+              />
+            </button>
+            <button
+              onClick={toggleMenu}
+              className="text-neutral-400 hover:text-white focus:outline-none sm:hidden flex"
+              aria-label="Toggle menu"
+            >
+              <img
+                src={isOpen ? 'assets/close.svg' : 'assets/menu.svg'}
+                alt="toggle"
+                className="w-6 h-6"
+              />
+            </button>
+          </div>
           <nav className="sm:flex hidden">
             <button
               onClick={toggleLanguage}
