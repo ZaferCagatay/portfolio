@@ -336,7 +336,7 @@ export const myProjects = [
     subdescTR:
       'Three.js ve GSAP kullanılarak oluşturulan bu site, kullanıcıların iPhone’u döndürmesine, renklerini ve versiyonlarını değiştirmesine olanak tanıyan ileri düzey 3D modelleme ve akıcı animasyonlarla görsel bir şölen sunar.',
 
-    href: 'https://apple-website-khaki-two.vercel.app',
+    href: 'https://apple15pro.onrender.com',
     texture: '/textures/project/project6.mp4',
     logo: '/assets/project-logo6.svg',
     logoStyle: {
