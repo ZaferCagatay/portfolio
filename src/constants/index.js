@@ -421,7 +421,7 @@ export const myProjects = [
     subdescTR:
       'TypeScript, AngularJS, C# ve .NET API kullanılarak geliştirilen My Blog, kullanıcıların blogları kategorilere göre filtrelemesine, içeriklerle etkileşime geçmesine ve hesaplarını zahmetsizce yönetmesine olanak tanır. Güvenli ve dinamik bir blog deneyimi sağlar.',
 
-    href: 'https://github.com/ZaferCagatay/angulardotnet-learning',
+    href: 'https://myblogapp.org',
     texture: '/textures/project/project8.mp4',
     logo: '/assets/project-logo8.svg',
     logoStyle: {
@@ -457,9 +457,14 @@ export const myProjects = [
         path: '/assets/api.svg',
       },
       {
-        id: 5,
+        id: 6,
         name: 'SQL',
         path: '/assets/sql.svg',
+      },
+      {
+        id: 7,
+        name: 'AWS',
+        path: '/assets/aws.svg',
       },
     ],
   },
