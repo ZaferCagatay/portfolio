@@ -411,6 +411,44 @@ export const myProjects = [
     ],
   },
   {
+    title: 'Therapy Landing Page - Learn Services',
+    titleTR: 'Terapi Hizmeti Tanıtım- Hizmetleri Keşfet',
+    desc: 'Dktataberkgur is a landing page for a local speech therapist, showcasing services, a fun mini-test to check if therapy is needed, client testimonials, and an easy-to-use contact section.',
+    descTR:
+      'Dktataberkgur, yerel bir konuşma terapisti için hazırlanmış bir tanıtım sitesidir; hizmetleri, mini testi, müşteri yorumlarını ve kolay iletişim bölümünü sunar.',
+    subdesc:
+      'Users can explore services, get quick feedback from the mini-test, read testimonials, and contact the therapist directly. The site is built with a clean, modern design for an approachable experience. The mini-test makes it easy to check therapy needs.',
+    subdescTR:
+      'Kullanıcılar hizmetleri inceleyebilir, mini test ile hızlı geri bildirim alabilir, yorumları okuyabilir ve terapistle doğrudan iletişime geçebilir. Site, modern ve sade tasarımıyla erişilebilir bir deneyim sunar. Mini test, terapi ihtiyacını hızlıca kontrol etmeyi sağlar.',
+
+    href: 'https://dktataberkgur.com',
+    texture: '/textures/project/project9.mp4',
+    logo: '/assets/project-logo9.png',
+    logoStyle: {
+      backgroundColor: '#2A1816',
+      border: '0.2px solid #36201D',
+      boxShadow: '0px 0px 60px 0px #AA3C304D',
+    },
+    spotlight: '/assets/spotlight2.png',
+    tags: [
+      {
+        id: 1,
+        name: 'React.js',
+        path: '/assets/react.svg',
+      },
+      {
+        id: 2,
+        name: 'JavaScript',
+        path: '/assets/javascript.svg',
+      },
+      {
+        id: 3,
+        name: 'API',
+        path: '/assets/api.svg',
+      },
+    ],
+  },
+  {
     title: 'My Blog - A Complete Blogging Platform',
     titleTR: 'My Blog - Tam Donanımlı Blog Platformu',
     desc: 'My Blog is a fully featured platform for creating and exploring blogs. With a robust backend and frontend, it offers seamless user experiences like registration, login with 2FA, and blog creation.',
@@ -592,7 +630,7 @@ export const footerConstants = [
     text1TR: 'Şartlar ve Koşullar',
     text2: 'Privacy Policy',
     text2TR: 'Gizlilik Politikası',
-    text3: '© 2024 Zafer. All rights reserved.',
-    text3TR: '© 2024 Zafer. Tüm haklar saklıdır.',
+    text3: '© 2025 Zafer. All rights reserved.',
+    text3TR: '© 2025 Zafer. Tüm haklar saklıdır.',
   },
 ];
