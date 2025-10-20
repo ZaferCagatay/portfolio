@@ -124,53 +124,53 @@ export const myProjects = [
       },
     ],
   },
-  {
-    title: 'Threads - Dive into Engaging Discussions',
-    titleTR: 'Threads - İlgi Çekici Tartışmalara Dalın',
-    desc: 'Threads is a feature-rich platform designed for sharing and exploring threads. From liking and commenting to creating communities, Threads empowers users to express themselves and connect with others through thoughtful posts.',
-    descTR:
-      'Threads, konuları paylaşmak ve keşfetmek için tasarlanmış zengin özelliklere sahip bir platformdur. Beğenmekten ve yorum yapmaktan topluluklar oluşturmaya kadar, Threads kullanıcıların kendilerini ifade etmelerini ve başkalarıyla bağlantı kurmalarını sağlar.',
-    subdesc:
-      'With Threads, users can explore profiles, discover suggested users, search for threads or authors, and create private communities where only members can view content.',
-    subdescTR:
-      'Threads ile kullanıcılar profilleri keşfedebilir, önerilen kullanıcıları bulabilir, konuları veya yazarları arayabilir ve yalnızca üyelerin içeriği görebileceği özel topluluklar oluşturabilir.',
-    href: 'https://threads-clone-app-iy3o.vercel.app',
-    texture: '/textures/project/project2.mp4',
-    logo: '/assets/project-logo2.svg',
-    logoStyle: {
-      backgroundColor: '#13202F',
-      border: '0.2px solid #17293E',
-      boxShadow: '0px 0px 60px 0px #2F6DB54D',
-    },
-    spotlight: '/assets/spotlight2.png',
-    tags: [
-      {
-        id: 1,
-        name: 'React.js',
-        path: '/assets/react.svg',
-      },
-      {
-        id: 2,
-        name: 'Next.js',
-        path: '/assets/nextjs.svg',
-      },
-      {
-        id: 3,
-        name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
-      },
-      {
-        id: 4,
-        name: 'TypeScript',
-        path: '/assets/typescript.png',
-      },
-      {
-        id: 5,
-        name: 'MongoDB',
-        path: '/assets/mongodb.svg',
-      },
-    ],
-  },
+  // {
+  //   title: 'Threads - Dive into Engaging Discussions',
+  //   titleTR: 'Threads - İlgi Çekici Tartışmalara Dalın',
+  //   desc: 'Threads is a feature-rich platform designed for sharing and exploring threads. From liking and commenting to creating communities, Threads empowers users to express themselves and connect with others through thoughtful posts.',
+  //   descTR:
+  //     'Threads, konuları paylaşmak ve keşfetmek için tasarlanmış zengin özelliklere sahip bir platformdur. Beğenmekten ve yorum yapmaktan topluluklar oluşturmaya kadar, Threads kullanıcıların kendilerini ifade etmelerini ve başkalarıyla bağlantı kurmalarını sağlar.',
+  //   subdesc:
+  //     'With Threads, users can explore profiles, discover suggested users, search for threads or authors, and create private communities where only members can view content.',
+  //   subdescTR:
+  //     'Threads ile kullanıcılar profilleri keşfedebilir, önerilen kullanıcıları bulabilir, konuları veya yazarları arayabilir ve yalnızca üyelerin içeriği görebileceği özel topluluklar oluşturabilir.',
+  //   href: 'https://threads-clone-app-iy3o.vercel.app',
+  //   texture: '/textures/project/project2.mp4',
+  //   logo: '/assets/project-logo2.svg',
+  //   logoStyle: {
+  //     backgroundColor: '#13202F',
+  //     border: '0.2px solid #17293E',
+  //     boxShadow: '0px 0px 60px 0px #2F6DB54D',
+  //   },
+  //   spotlight: '/assets/spotlight2.png',
+  //   tags: [
+  //     {
+  //       id: 1,
+  //       name: 'React.js',
+  //       path: '/assets/react.svg',
+  //     },
+  //     {
+  //       id: 2,
+  //       name: 'Next.js',
+  //       path: '/assets/nextjs.svg',
+  //     },
+  //     {
+  //       id: 3,
+  //       name: 'TailwindCSS',
+  //       path: 'assets/tailwindcss.png',
+  //     },
+  //     {
+  //       id: 4,
+  //       name: 'TypeScript',
+  //       path: '/assets/typescript.png',
+  //     },
+  //     {
+  //       id: 5,
+  //       name: 'MongoDB',
+  //       path: '/assets/mongodb.svg',
+  //     },
+  //   ],
+  // },
   {
     title: 'CarePulse - Health Management System',
     titleTR: 'CarePulse - Sağlık Yönetim Sistemi',
