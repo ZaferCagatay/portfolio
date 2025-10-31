@@ -37,17 +37,17 @@ export const aboutTexts = [
     headtext: "Hi, I'm Zafer",
     headtextTR: 'Merhaba, ben Zafer',
     subtext:
-      'With 3 years of experience in frontend and backend development, I focus on creating dynamic and visually engaging websites. My passion lies in crafting seamless, user-focused web applications while continuously learning, adapting, and embracing new challenges.',
+      'With 4 years of experience in frontend and backend development, I focus on creating dynamic and visually engaging websites. My passion lies in crafting seamless, user-focused web applications while continuously learning, adapting, and embracing new challenges.',
     subtextTR:
-      '3 yıllık frontend ve backend geliştirme deneyimimle, dinamik ve görsel olarak etkileyici web siteleri oluşturmaya odaklanıyorum. Tutkum, sürekli öğrenerek, uyum sağlayarak ve yeni zorlukları kucaklayarak kusursuz, kullanıcı odaklı web uygulamaları geliştirmektir.',
+      '4 yıllık frontend ve backend geliştirme deneyimimle, dinamik ve görsel olarak etkileyici web siteleri oluşturmaya odaklanıyorum. Tutkum, sürekli öğrenerek, uyum sağlayarak ve yeni zorlukları kucaklayarak kusursuz, kullanıcı odaklı web uygulamaları geliştirmektir.',
   },
   {
     headtext: 'Tech Stack',
     headtextTR: 'Teknoloji Yığını',
     subtext:
-      'In addition to frontend expertise, I bring strong backend skills in Express.js, SQL databases, .NET APIs, C#, and AngularJS. I also have expertise in Python, having developed an application that integrated machine learning to solve complex problems. My adaptability ensures innovative and efficient solutions across diverse technologies.',
+      'In addition to frontend expertise, I bring strong backend skills in Express.js, SQL databases, .NET APIs, C#, and Node.js. I also have expertise in Python, having developed an application that integrated machine learning to solve complex problems. My adaptability ensures innovative and efficient solutions across diverse technologies.',
     subtextTR:
-      "Frontend uzmanlığının yanı sıra, Express.js, SQL veritabanları, .NET API’leri, C# ve AngularJS gibi güçlü backend becerilere sahibim. Ayrıca, C#, Python ve C++'ta da farklı alanlarda deneyimlerim var . Yeni teknolojilere uyum sağlayabilme yeteneğim, yenilikçi ve verimli çözümler yaratabilmemi sağlar.",
+      "Frontend uzmanlığının yanı sıra, Express.js, SQL veritabanları, .NET API’leri, C# ve Node.js gibi güçlü backend becerilere sahibim. Ayrıca, C#, Python ve C++'ta da farklı alanlarda deneyimlerim var . Yeni teknolojilere uyum sağlayabilme yeteneğim, yenilikçi ve verimli çözümler yaratabilmemi sağlar.",
   },
   {
     headtext: 'I work remotely across most timezones.',
@@ -553,9 +553,9 @@ export const workExperiences = [
     posTR: 'Serbest Yazılım Geliştirici',
     duration: '2023 - Present',
     title:
-      'Throughout my freelance career, I’ve crafted diverse solutions, from developing a Python app to creating a TradingView indicator. A highlight was building a robust, user-friendly admin panel for a local company, which continues to enhance their operations and increase efficiency by 10x.',
+      'Throughout my freelance career, I’ve built diverse solutions — from developing a Python application for gamers to delivering a full-scale, multi-tenant platform with a complete partner dashboard, frontend, admin panel, and database architecture. A highlight was building a robust, user-friendly admin panel for a local company, which continues to enhance their operations and increase efficiency by 10x.',
     titleTR:
-      'Serbest çalışma kariyerim boyunca, bir Python uygulaması geliştirmekten TradingView göstergesi oluşturmaya kadar çeşitli çözümler ürettim. Öne çıkanlardan biri, yerel bir şirket için güçlü ve kullanıcı dostu bir yönetim paneli oluşturmaktı. Bu, operasyonlarını geliştirmeye ve verimliliği 10 kat artırmaya devam ediyor.',
+      'Serbest çalışma kariyerim boyunca; oyuncular için geliştirdiğim bir Python uygulamasından, iş ortakları paneli, frontend, yönetim paneli ve veritabanı mimarisiyle birlikte tam kapsamlı, çok kiracılı (multi-tenant) bir platforma kadar çeşitli çözümler geliştirdim. Öne çıkanlardan biri, yerel bir şirket için güçlü ve kullanıcı dostu bir yönetim paneli oluşturmaktı. Bu, operasyonlarını geliştirmeye ve verimliliği 10 kat artırmaya devam ediyor.',
     icon: '/assets/freelancer.svg',
     animation: 'dance',
   },
