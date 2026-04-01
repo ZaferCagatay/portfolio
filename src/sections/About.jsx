@@ -1,9 +1,17 @@
 import Globe from 'react-globe.gl';
+import { motion } from 'framer-motion';
 import Button from '../components/Button';
 import { useEffect, useRef, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { aboutTexts } from '../constants';
 import { useLanguage } from '../context/LanguageContext';
+import {
+  getInitialHidden,
+  motionViewport,
+  staggerContainerSafe,
+  staggerItem,
+  useMotionReduced,
+} from '../utils/motion';
 
 const GLOBE_SIZE = 326;
 const EARTH_NIGHT = '/textures/globe/earth-night.jpg';
@@ -11,6 +19,7 @@ const EARTH_BUMP = '/textures/globe/earth-topology.png';
 
 const About = () => {
   const { t } = useLanguage();
+  const reduceMotion = useMotionReduced();
   const [hasCopied, setHasCopied] = useState(false);
   const globeWrapRef = useRef(null);
   const [globeInView, setGlobeInView] = useState(true);
@@ -23,7 +32,7 @@ const About = () => {
     if (!el) return undefined;
     const io = new IntersectionObserver(
       ([entry]) => setGlobeInView(entry.isIntersecting),
-      { rootMargin: '120px 0px', threshold: 0 }
+      { rootMargin: '120px 0px', threshold: 0 },
     );
     io.observe(el);
     return () => io.disconnect();
@@ -42,8 +51,14 @@ const About = () => {
 
   return (
     <section id="about" className="c-space my-20">
-      <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
-        <div className="col-span-1 xl:row-span-3">
+      <motion.div
+        className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full"
+        variants={staggerContainerSafe(reduceMotion)}
+        initial={getInitialHidden(reduceMotion)}
+        whileInView="visible"
+        viewport={motionViewport}
+      >
+        <motion.div variants={staggerItem} className="col-span-1 xl:row-span-3">
           <div className="grid-container">
             <img
               src="/assets/grid1.png"
@@ -59,8 +74,8 @@ const About = () => {
               </p>
             </div>
           </div>
-        </div>
-        <div className="col-span-1 xl:row-span-3">
+        </motion.div>
+        <motion.div variants={staggerItem} className="col-span-1 xl:row-span-3">
           <div className="grid-container">
             <img
               src="/assets/grid2.png"
@@ -76,8 +91,8 @@ const About = () => {
               </p>
             </div>
           </div>
-        </div>
-        <div className="col-span-1 xl:row-span-4">
+        </motion.div>
+        <motion.div variants={staggerItem} className="col-span-1 xl:row-span-4">
           <div className="grid-container">
             <div
               ref={globeWrapRef}
@@ -130,8 +145,11 @@ const About = () => {
               </a>
             </div>
           </div>
-        </div>
-        <div className="xl:col-span-2 xl:row-span-3">
+        </motion.div>
+        <motion.div
+          variants={staggerItem}
+          className="xl:col-span-2 xl:row-span-3"
+        >
           <div className="grid-container">
             <img
               src="/assets/grid3.png"
@@ -147,8 +165,11 @@ const About = () => {
               </p>
             </div>
           </div>
-        </div>
-        <div className="xl:col-span-1 xl:row-span-2">
+        </motion.div>
+        <motion.div
+          variants={staggerItem}
+          className="xl:col-span-1 xl:row-span-2"
+        >
           <div className="grid-container">
             <img
               src="/assets/grid4.png"
@@ -164,14 +185,14 @@ const About = () => {
                   src={hasCopied ? '/assets/tick.svg' : '/assets/copy.svg'}
                   alt="copy"
                 />
-                <p className="lg:text-2xl md:text-xl font-medium text-gray_gradient text-white cursor-pointer">
+                <p className="lg:text-xl md:text-md font-medium text-gray_gradient text-white cursor-pointer">
                   {aboutTexts[4].subtext}
                 </p>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

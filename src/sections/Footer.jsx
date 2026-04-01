@@ -1,10 +1,24 @@
+import { motion } from 'framer-motion';
 import { footerConstants } from '../constants';
 import { useLanguage } from '../context/LanguageContext';
+import {
+  fadeInUp,
+  getInitialHidden,
+  motionViewport,
+  useMotionReduced,
+} from '../utils/motion';
 
 const Footer = () => {
   const { t } = useLanguage();
+  const reduceMotion = useMotionReduced();
   return (
-    <section className="c-space pt-7 pb-3 border-t border-black-300 flex justify-between items-center flex-wrap gap-5">
+    <motion.section
+      className="c-space pt-7 pb-3 border-t border-black-300 flex justify-between items-center flex-wrap gap-5"
+      variants={fadeInUp}
+      initial={getInitialHidden(reduceMotion)}
+      whileInView="visible"
+      viewport={motionViewport}
+    >
       <div className="text-white-500 flex gap-2">
         <p>{t(footerConstants[0].text1, footerConstants[0].text1TR)} </p>
         <p>|</p>
@@ -30,7 +44,7 @@ const Footer = () => {
       <p className="text-white-500">
         {t(footerConstants[0].text3, footerConstants[0].text3TR)}
       </p>
-    </section>
+    </motion.section>
   );
 };
 

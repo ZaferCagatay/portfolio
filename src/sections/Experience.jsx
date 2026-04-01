@@ -1,4 +1,5 @@
 import React, { Suspense, useState } from 'react';
+import { motion } from 'framer-motion';
 import { useMediaQuery } from 'react-responsive';
 import { workExperiences } from '../constants';
 import { OrbitControls } from '@react-three/drei';
@@ -6,21 +7,45 @@ import CanvasLoader from '../components/CanvasLoader';
 import Developer from '../components/Developer';
 import ViewportCanvas from '../components/ViewportCanvas';
 import { useLanguage } from '../context/LanguageContext';
+import {
+  fadeInUp,
+  getInitialHidden,
+  motionViewport,
+  staggerContainerSafe,
+  staggerItem,
+  useMotionReduced,
+} from '../utils/motion';
 
 const Experience = () => {
   const { t } = useLanguage();
+  const reduceMotion = useMotionReduced();
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const [animationName, setAnimationName] = useState('idle');
   return (
     <section id="work" className="c-space my-20">
       <div className="w-full text-white-600">
-        <h3 className="head-text">
+        <motion.h3
+          className="head-text"
+          variants={fadeInUp}
+          initial={getInitialHidden(reduceMotion)}
+          whileInView="visible"
+          viewport={motionViewport}
+        >
           {t('My Work Experience', 'İş Tecrübelerim')}
-        </h3>
+        </motion.h3>
 
         <div className="work-container">
-          <div className="work-canvas min-h-[320px]">
-            <ViewportCanvas isMobile={isMobile} className="w-full h-full min-h-[320px]">
+          <motion.div
+            className="work-canvas min-h-[320px]"
+            variants={fadeInUp}
+            initial={getInitialHidden(reduceMotion)}
+            whileInView="visible"
+            viewport={motionViewport}
+          >
+            <ViewportCanvas
+              isMobile={isMobile}
+              className="w-full h-full min-h-[320px]"
+            >
               <ambientLight intensity={7} />
               <spotLight position={[10, 10, 10]} angle={0.15} penubra={1} />
               <directionalLight position={[10, 10, 10]} intensity={1} />
@@ -33,10 +58,15 @@ const Experience = () => {
                 />
               </Suspense>
             </ViewportCanvas>
-          </div>
-          <div className="work-content">
-            <div className="sm:py-10 py-5 sm:px-5 px-2.5">
-              {workExperiences.map(
+          </motion.div>
+          <motion.div
+            className="work-content sm:py-10 py-5 sm:px-5 px-2.5"
+            variants={staggerContainerSafe(reduceMotion)}
+            initial={getInitialHidden(reduceMotion)}
+            whileInView="visible"
+            viewport={motionViewport}
+          >
+            {workExperiences.map(
                 ({
                   id,
                   name,
@@ -49,8 +79,9 @@ const Experience = () => {
                   icon,
                   animation,
                 }) => (
-                  <div
+                  <motion.div
                     key={id}
+                    variants={staggerItem}
                     className="work-content_container group"
                     onPointerOver={() =>
                       setAnimationName(animation.toLowerCase())
@@ -92,11 +123,10 @@ const Experience = () => {
                         {t(title, titleTR)}
                       </p>
                     </div>
-                  </div>
-                )
+                  </motion.div>
+                ),
               )}
-            </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

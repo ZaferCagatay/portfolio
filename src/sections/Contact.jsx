@@ -1,187 +1,67 @@
-import { useRef, useState } from 'react';
-import emailjs from '@emailjs/browser';
-
-import useAlert from '../utils/useAlert.js';
 import Alert from '../components/Alert.jsx';
+import ContactForm from '../components/ContactForm.jsx';
 import { contactTexts } from '../constants/index.js';
 import { useLanguage } from '../context/LanguageContext.jsx';
+import { useContactForm } from '../hooks/useContactForm.js';
+import { motion } from 'framer-motion';
+import {
+  fadeInUp,
+  getInitialHidden,
+  motionViewport,
+  useMotionReduced,
+} from '../utils/motion.js';
 
-const Contact = () => {
+export default function Contact() {
   const { t } = useLanguage();
-  const formRef = useRef();
-
-  const { alert, showAlert, hideAlert } = useAlert();
-  const [loading, setLoading] = useState(false);
-  const [form, setForm] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-
-  const handleChange = ({ target: { name, value } }) => {
-    setForm({ ...form, [name]: value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setLoading(true);
-
-    emailjs
-      .send(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-        {
-          from_name: form.name,
-          to_name: 'Zafer',
-          from_email: form.email,
-          to_email: 'zafercagatayumut@gmail.com',
-          message: form.message,
-        },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
-      )
-      .then(
-        () => {
-          setLoading(false);
-          showAlert({
-            show: true,
-            text: t(
-              'Thank you for your message 😃',
-              'Mesajın için teşekkürler 😃'
-            ),
-            type: 'success',
-          });
-
-          setTimeout(() => {
-            hideAlert(false);
-            setForm({
-              name: '',
-              email: '',
-              message: '',
-            });
-          }, [3000]);
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
-
-          showAlert({
-            show: true,
-            text: t(
-              "I didn't receive your message 😢",
-              'Mesajın iletilemedi 😢'
-            ),
-            type: 'danger',
-          });
-        }
-      );
-  };
+  const reduceMotion = useMotionReduced();
+  const { alert, form, handleChange, handleSubmit, loading } = useContactForm();
+  const intro = contactTexts[0];
 
   return (
-    <section className="c-space my-20" id="contact">
+    <section className="c-space my-8 sm:my-20" id="contact">
       {alert.show && <Alert {...alert} />}
 
-      <div className="relative min-h-screen flex items-center justify-center flex-col">
+      <div className="relative flex min-h-0 flex-col items-center justify-center overflow-hidden py-6 sm:min-h-[min(88vh,50rem)] sm:py-14">
+        {/* Mac frame: contained so the full device stays visible on narrow screens; wider on all breakpoints */}
         <img
           src="/assets/terminal.png"
-          alt="terminal-bg"
-          className="absolute insent-0 min-h-[110%]"
+          alt=""
+          className="pointer-events-none absolute left-1/2 top-[42%] z-0 w-[min(96vw,80rem)] max-w-none -translate-x-1/2 -translate-y-1/2 object-contain opacity-[0.32] sm:top-1/2 sm:w-[min(94vw,80rem)] sm:opacity-[0.26]"
+          aria-hidden
         />
+        <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-[#010103] via-[#010103]/40 to-[#010103] sm:via-transparent" />
 
-        <div className="contact-container relative z-10">
-          <h3 className="head-text">
-            {t(contactTexts[0].headtext, contactTexts[0].headtextTR)}
-          </h3>
-          <p className="text-lg text-white-600 mt-3">
-            {t(contactTexts[0].subtext, contactTexts[0].subtextTR)}
-          </p>
+        <div className="relative z-10 w-full">
+          <div className="rounded-2xl border border-black-300/70 bg-black-200/60 p-5 shadow-2xl shadow-black-500/50 backdrop-blur-md sm:bg-black-200/55 sm:p-8">
+            <motion.h3
+              className="text-2xl font-semibold text-gray_gradient sm:text-3xl"
+              variants={fadeInUp}
+              initial={getInitialHidden(reduceMotion)}
+              whileInView="visible"
+              viewport={motionViewport}
+            >
+              {t(intro.headtext, intro.headtextTR)}
+            </motion.h3>
+            <motion.p
+              className="mt-2 max-w-prose text-sm leading-relaxed text-white-600 sm:mt-3 sm:text-[0.9375rem]"
+              variants={fadeInUp}
+              initial={getInitialHidden(reduceMotion)}
+              whileInView="visible"
+              viewport={motionViewport}
+              transition={{ delay: reduceMotion ? 0 : 0.05 }}
+            >
+              {t(intro.subtext, intro.subtextTR)}
+            </motion.p>
 
-          <form
-            ref={formRef}
-            onSubmit={handleSubmit}
-            className="mt-12 flex flex-col space-y-7"
-          >
-            <label className="space-y-3">
-              <span className="field-label">
-                {t(
-                  contactTexts[0].formConstants[0].label,
-                  contactTexts[0].formConstants[0].labelTR
-                )}
-              </span>
-              <input
-                type="text"
-                name="name"
-                value={form.name}
-                onChange={handleChange}
-                required
-                className="field-input"
-                placeholder={t(
-                  contactTexts[0].formConstants[0].placeholder,
-                  contactTexts[0].formConstants[0].placeholderTR
-                )}
-              />
-            </label>
-
-            <label className="space-y-3">
-              <span className="field-label">
-                {t(
-                  contactTexts[0].formConstants[1].label,
-                  contactTexts[0].formConstants[1].labelTR
-                )}
-              </span>
-              <input
-                type="email"
-                name="email"
-                value={form.email}
-                onChange={handleChange}
-                required
-                className="field-input"
-                placeholder={t(
-                  contactTexts[0].formConstants[1].placeholder,
-                  contactTexts[0].formConstants[1].placeholderTR
-                )}
-              />
-            </label>
-
-            <label className="space-y-3">
-              <span className="field-label">
-                {t(
-                  contactTexts[0].formConstants[2].label,
-                  contactTexts[0].formConstants[2].labelTR
-                )}
-              </span>
-              <textarea
-                name="message"
-                value={form.message}
-                onChange={handleChange}
-                required
-                rows={5}
-                className="field-input"
-                placeholder={t(
-                  contactTexts[0].formConstants[2].placeholder,
-                  contactTexts[0].formConstants[2].placeholderTR
-                )}
-              />
-            </label>
-
-            <button className="field-btn" type="submit" disabled={loading}>
-              {loading
-                ? t(
-                    contactTexts[0].buttonSendingText,
-                    contactTexts[0].buttonSendingTextTR
-                  )
-                : t(contactTexts[0].buttonText, contactTexts[0].buttonTextTR)}
-
-              <img
-                src="/assets/arrow-up.png"
-                alt="arrow-up"
-                className="field-btn_arrow"
-              />
-            </button>
-          </form>
+            <ContactForm
+              form={form}
+              loading={loading}
+              onChange={handleChange}
+              onSubmit={handleSubmit}
+            />
+          </div>
         </div>
       </div>
     </section>
   );
-};
-
-export default Contact;
+}
