@@ -1,9 +1,12 @@
-import { Html, useProgress } from '@react-three/drei';
+import { Html } from '@react-three/drei';
 import React from 'react';
 
+/**
+ * Avoid `useProgress()` here: it updates while sibling components (e.g. useGLTF in HackerRoom)
+ * are still rendering, which triggers React's "Cannot update a component while rendering
+ * a different component" warning. A static label is fine for a Suspense fallback.
+ */
 const CanvasLoader = () => {
-  const { progress } = useProgress();
-
   return (
     <Html
       as="div"
@@ -24,7 +27,7 @@ const CanvasLoader = () => {
           marginTop: 40,
         }}
       >
-        {progress !== 0 ? `${progress.toFixed(2)}%` : 'Loading...'}
+        Loading…
       </p>
     </Html>
   );
