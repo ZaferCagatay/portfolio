@@ -54,11 +54,15 @@ const Projects = () => {
               key={selectedProjectIndex}
               className="flex flex-col gap-5 w-full"
               initial={
-                reduceMotion ? false : { opacity: 0, x: 28, filter: 'blur(6px)' }
+                reduceMotion
+                  ? false
+                  : { opacity: 0, x: 28, filter: 'blur(6px)' }
               }
               animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
               exit={
-                reduceMotion ? undefined : { opacity: 0, x: -24, filter: 'blur(4px)' }
+                reduceMotion
+                  ? undefined
+                  : { opacity: 0, x: -24, filter: 'blur(4px)' }
               }
               transition={reduceMotion ? { duration: 0 } : slideTransition}
             >

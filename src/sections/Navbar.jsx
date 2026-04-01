@@ -2,7 +2,11 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { navLinks } from '../constants';
 import { useLanguage } from '../context/LanguageContext';
-import { fadeInDown, getInitialHidden, useMotionReduced } from '../utils/motion';
+import {
+  fadeInDown,
+  getInitialHidden,
+  useMotionReduced,
+} from '../utils/motion';
 
 const NavItems = ({ listClassName = '', reduceMotion }) => {
   const { language } = useLanguage();

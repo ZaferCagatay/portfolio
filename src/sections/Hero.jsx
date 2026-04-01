@@ -45,7 +45,10 @@ const Hero = () => {
           {t(heroTexts[0], heroTextsTR[0])}{' '}
           <span className="waving-hand">👋</span>
         </motion.p>
-        <motion.p variants={staggerItem} className="hero_tag text-gray_gradient">
+        <motion.p
+          variants={staggerItem}
+          className="hero_tag text-gray_gradient"
+        >
           {t(heroTexts[1], heroTextsTR[1])}
         </motion.p>
       </motion.div>

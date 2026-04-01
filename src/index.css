@@ -113,12 +113,13 @@ body {
     @apply col-span-2 rounded-lg bg-black-200 border border-black-300;
   }
 
+  /* display:grid comes from JSX (`hidden sm:grid`) so `hidden` is not overridden on mobile */
   .work-content_container {
-    @apply grid grid-cols-[auto_1fr] items-start gap-5  transition-all ease-in-out duration-500 cursor-pointer hover:bg-black-300 rounded-lg sm:px-5 px-2.5;
+    @apply grid-cols-[auto_1fr] items-start gap-4 px-2.5 transition-all duration-500 ease-in-out cursor-pointer rounded-lg hover:bg-black-300 sm:gap-5 sm:px-5;
   }
 
   .work-content_logo {
-    @apply flex rounded-3xl w-16 h-16 p-2 bg-black-600 items-center justify-center;
+    @apply flex h-14 w-14 shrink-0 items-center justify-center rounded-3xl bg-black-600 p-2 sm:h-16 sm:w-16;
   }
 
   .work-content_bar {
