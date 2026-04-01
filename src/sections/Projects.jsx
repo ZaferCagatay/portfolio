@@ -1,8 +1,9 @@
 import { Suspense, useState } from 'react';
 import { myProjects } from '../constants';
-import { Canvas } from '@react-three/fiber';
 import { Center, OrbitControls } from '@react-three/drei';
 import CanvasLoader from '../components/CanvasLoader';
+import ViewportCanvas from '../components/ViewportCanvas';
+import { useMediaQuery } from 'react-responsive';
 import DemoComputer from '../components/DemoComputer';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -10,6 +11,7 @@ const projectCount = myProjects.length;
 
 const Projects = () => {
   const { t } = useLanguage();
+  const isMobile = useMediaQuery({ maxWidth: 768 });
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
 
   const currentProject = myProjects[selectedProjectIndex];
@@ -104,8 +106,8 @@ const Projects = () => {
           </div>
         </div>
 
-        <div className="border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
-          <Canvas>
+        <div className="border border-black-300 bg-black-200 rounded-lg h-96 md:h-full min-h-[24rem]">
+          <ViewportCanvas isMobile={isMobile} className="w-full h-full min-h-[24rem]">
             <ambientLight intensity={Math.PI} />
             <directionalLight position={[10, 10, 5]} />
             <Center>
@@ -116,7 +118,7 @@ const Projects = () => {
               </Suspense>
             </Center>
             <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={false} />
-          </Canvas>
+          </ViewportCanvas>
         </div>
       </div>
     </section>

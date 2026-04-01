@@ -1,13 +1,15 @@
-import { Canvas } from '@react-three/fiber';
 import React, { Suspense, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import { workExperiences } from '../constants';
 import { OrbitControls } from '@react-three/drei';
 import CanvasLoader from '../components/CanvasLoader';
 import Developer from '../components/Developer';
+import ViewportCanvas from '../components/ViewportCanvas';
 import { useLanguage } from '../context/LanguageContext';
 
 const Experience = () => {
   const { t } = useLanguage();
+  const isMobile = useMediaQuery({ maxWidth: 768 });
   const [animationName, setAnimationName] = useState('idle');
   return (
     <section id="work" className="c-space my-20">
@@ -17,8 +19,8 @@ const Experience = () => {
         </h3>
 
         <div className="work-container">
-          <div className="work-canvas">
-            <Canvas>
+          <div className="work-canvas min-h-[320px]">
+            <ViewportCanvas isMobile={isMobile} className="w-full h-full min-h-[320px]">
               <ambientLight intensity={7} />
               <spotLight position={[10, 10, 10]} angle={0.15} penubra={1} />
               <directionalLight position={[10, 10, 10]} intensity={1} />
@@ -30,7 +32,7 @@ const Experience = () => {
                   animationName={animationName}
                 />
               </Suspense>
-            </Canvas>
+            </ViewportCanvas>
           </div>
           <div className="work-content">
             <div className="sm:py-10 py-5 sm:px-5 px-2.5">

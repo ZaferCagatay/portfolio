@@ -79,6 +79,5 @@ const HackerRoom = (props) => {
     </group>
   );
 };
-useGLTF.preload('/models/hacker-room.glb');
 
 export default HackerRoom;

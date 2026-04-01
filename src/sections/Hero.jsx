@@ -1,6 +1,6 @@
 import { PerspectiveCamera } from '@react-three/drei';
-import { Canvas } from '@react-three/fiber';
 import HackerRoom from '../components/HackerRoom';
+import ViewportCanvas from '../components/ViewportCanvas';
 import { Suspense } from 'react';
 import CanvasLoader from '../components/CanvasLoader';
 import { useMediaQuery } from 'react-responsive';
@@ -34,7 +34,11 @@ const Hero = () => {
       </div>
 
       <div className="w-full h-full absolute inset-0">
-        <Canvas className="w-full h-full">
+        <ViewportCanvas
+          defaultVisible
+          isMobile={isMobile}
+          className="w-full h-full"
+        >
           <Suspense fallback={<CanvasLoader />}>
             <PerspectiveCamera makeDefault position={[0, 0, 20]} />
             <HeroCamera isMobile={isMobile}>
@@ -54,7 +58,7 @@ const Hero = () => {
             <ambientLight intensity={1} />
             <directionalLight position={[10, 10, 10]} intensity={0.5} />
           </Suspense>
-        </Canvas>
+        </ViewportCanvas>
       </div>
       <div className="absolute bottom-7 left-0 right-0 w-full z-10 c-space">
         <a href="#about" className="w-fit">

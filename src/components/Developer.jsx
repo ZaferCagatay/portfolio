@@ -1,41 +1,103 @@
 import React, { useEffect, useRef } from 'react';
 import { useAnimations, useFBX, useGLTF } from '@react-three/drei';
+import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader.js';
+
+const ANIM_PATH = {
+  idle: '/models/animations/idle.fbx',
+  dance: '/models/animations/dancing.fbx',
+  hiphop: '/models/animations/hiphop.fbx',
+  'silly-dance': '/models/animations/sillydance.fbx',
+};
+
+const FADE = 0.5;
 
 const IsFixedModel = ({ animationName = 'idle', ...props }) => {
   const group = useRef();
   const { nodes, materials } = useGLTF('/models/developer.glb');
 
-  const { animations: idleAnimation } = useFBX('/models/animations/idle.fbx');
-  const { animations: dancingAnimation } = useFBX(
-    '/models/animations/dancing.fbx'
-  );
-  const { animations: hiphopAnimation } = useFBX(
-    '/models/animations/hiphop.fbx'
-  );
-  const { animations: sillyDanceAnimation } = useFBX(
-    '/models/animations/sillydance.fbx'
-  );
-
+  const { animations: idleAnimation } = useFBX(ANIM_PATH.idle);
   idleAnimation[0].name = 'idle';
-  dancingAnimation[0].name = 'dance';
-  hiphopAnimation[0].name = 'hiphop';
-  sillyDanceAnimation[0].name = 'silly-dance';
 
-  const { actions } = useAnimations(
-    [
-      idleAnimation[0],
-      dancingAnimation[0],
-      hiphopAnimation[0],
-      sillyDanceAnimation[0],
-    ],
-    group
-  );
+  const { actions, mixer } = useAnimations([idleAnimation[0]], group);
+  const clipCache = useRef({});
+  const loaderRef = useRef(new FBXLoader());
+  const dynamicActions = useRef({});
 
   useEffect(() => {
-    actions[animationName].reset().fadeIn(0.5).play();
+    const idleAction = actions?.idle;
+    if (!mixer || !idleAction) return undefined;
 
-    return () => actions[animationName].fadeOut(0.5);
-  }, [animationName]);
+    let cancelled = false;
+
+    const fadeOutOthers = (activeName) => {
+      if (activeName !== 'idle') idleAction.fadeOut(FADE);
+      Object.entries(dynamicActions.current).forEach(([name, action]) => {
+        if (name !== activeName && action) action.fadeOut(FADE);
+      });
+    };
+
+    const playIdle = () => {
+      Object.values(dynamicActions.current).forEach((a) => {
+        if (a) a.fadeOut(FADE);
+      });
+      idleAction.reset().fadeIn(FADE).play();
+    };
+
+    const loadClip = (name) =>
+      new Promise((resolve, reject) => {
+        if (clipCache.current[name]) {
+          resolve(clipCache.current[name]);
+          return;
+        }
+        loaderRef.current.load(
+          ANIM_PATH[name],
+          (fbx) => {
+            const clip = fbx.animations[0];
+            clip.name = name;
+            clipCache.current[name] = clip;
+            resolve(clip);
+          },
+          undefined,
+          reject
+        );
+      });
+
+    const run = async () => {
+      if (animationName === 'idle') {
+        playIdle();
+        return;
+      }
+
+      try {
+        const clip = await loadClip(animationName);
+        if (cancelled) return;
+
+        fadeOutOthers(animationName);
+
+        let action = dynamicActions.current[animationName];
+        if (!action) {
+          action = mixer.clipAction(clip);
+          dynamicActions.current[animationName] = action;
+        }
+        action.reset().fadeIn(FADE).play();
+      } catch (e) {
+        console.error('Failed to load animation', animationName, e);
+      }
+    };
+
+    run();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [animationName, actions?.idle, mixer]);
+
+  useEffect(() => {
+    return () => {
+      mixer?.stopAllAction?.();
+    };
+  }, [mixer]);
+
   return (
     <group {...props} dispose={null} ref={group}>
       <skinnedMesh
@@ -107,7 +169,5 @@ const IsFixedModel = ({ animationName = 'idle', ...props }) => {
     </group>
   );
 };
-
-useGLTF.preload('/models/developer.glb');
 
 export default IsFixedModel;

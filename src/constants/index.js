@@ -73,6 +73,60 @@ export const aboutTexts = [
 
 export const myProjects = [
   {
+    title: 'Karta — Finance. CRM. Insight. Unified.',
+    titleTR: 'Karta — Finans, CRM ve Analiz. Hepsi Bir.',
+    desc: 'Karta unifies finance, CRM, and operations in one place. Monitor cash flow and aging receivables, manage your sales pipeline from lead to contract, and get an AI CFO with company health scoring—so you spot risks and opportunities before they turn into surprises.',
+    descTR:
+      'Karta; finans, CRM ve operasyonu tek çatıda birleştirir. Nakit akışı ve alacakları izleyin, adaydan sözleşmeye satış sürecini yönetin; AI CFO ve şirket sağlığı skoru ile risk ve fırsatları daha sürpriz haline gelmeden erkenden görün.',
+    subdesc:
+      'A decision layer for growing teams: recurring revenue and contracts, Excel-friendly imports, RBAC and multi-company support, plus scenario analysis and natural-language Q&A via the AI CFO.',
+    subdescTR:
+      'Büyüyen ekipler için karar katmanı: abonelik ve sözleşme yönetimi, Excel entegrasyonu, RBAC ve çoklu şirket desteği; AI CFO ile gelişmiş senaryo analizi ve doğal dilde interaktif soru-cevap.',
+    href: 'https://getkarta.app',
+    texture: '/textures/project/project3.mp4',
+    logo: '/assets/project-karta.ico',
+    logoStyle: {
+      backgroundColor: '#1e3a5f',
+      background:
+        'linear-gradient(0deg, rgba(30, 58, 95, 0.35), rgba(30, 58, 95, 0.35)), linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(226, 232, 240, 0.85) 100%)',
+      border: '0.2px solid rgba(148, 163, 184, 0.9)',
+      boxShadow: '0px 0px 60px 0px rgba(37, 99, 235, 0.28)',
+    },
+    spotlight: '/assets/spotlight3.png',
+    tags: [
+      {
+        id: 1,
+        name: 'React.js',
+        path: '/assets/react.svg',
+      },
+      {
+        id: 2,
+        name: 'Next.js',
+        path: '/assets/nextjs.svg',
+      },
+      {
+        id: 3,
+        name: 'TailwindCSS',
+        path: '/assets/tailwindcss.png',
+      },
+      {
+        id: 4,
+        name: 'TypeScript',
+        path: '/assets/typescript.png',
+      },
+      {
+        id: 5,
+        name: 'AI',
+        path: '/assets/ai.svg',
+      },
+      {
+        id: 6,
+        name: 'API',
+        path: '/assets/api.svg',
+      },
+    ],
+  },
+  {
     title: 'Podcastr - AI Podcast Platform',
     titleTR: 'Podcastr - Yapay Zeka Podcast Platformu',
     desc: 'Podcastr is a revolutionary Software-as-a-Service platform that transforms the way podcasts are created. With advanced AI-powered features like text-to-multiple-voices functionality, it allows creators to generate diverse voiceovers from a single text input.',
@@ -171,55 +225,55 @@ export const myProjects = [
   //     },
   //   ],
   // },
-  {
-    title: 'CarePulse - Health Management System',
-    titleTR: 'CarePulse - Sağlık Yönetim Sistemi',
-    desc: 'An innovative healthcare platform designed to streamline essential medical processes. It simplifies patient registration, appointment scheduling, and medical record management, providing a seamless experience for both healthcare providers and patients.',
-    descTR:
-      'Temel tıbbi süreçleri kolaylaştırmak için tasarlanmış yenilikçi bir sağlık platformudur. Hasta kaydı, randevu planlama ve tıbbi kayıt yönetimini basitleştirerek hem sağlık hizmeti sağlayıcılar, hem de hastalar için sorunsuz bir deneyim sunar.',
-    subdesc:
-      'With a focus on efficiency, CarePulse integrantes complex forms by using Next.js, Appwrite, Twillio and Sentry that enhance operational workflows.',
-    subdescTR:
-      'CarePulse, Next.js, Appwrite, Twilio ve Sentry kullanarak karmaşık formları entegre ederek operasyonel iş akışını geliştirir ve hastalara bilgilerine ulaşmakta kolaylık sağlayarak yardımcı olur',
-    href: 'https://healthcare-mauve.vercel.app',
-    texture: '/textures/project/project3.mp4',
-    logo: '/assets/project-logo3.png',
-    logoStyle: {
-      backgroundColor: '#60f5a1',
-      background:
-        'linear-gradient(0deg, #60F5A150, #60F5A150), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)',
-      border: '0.2px solid rgba(208, 213, 221, 1)',
-      boxShadow: '0px 0px 60px 0px rgba(35, 131, 96, 0.3)',
-    },
-    spotlight: '/assets/spotlight3.png',
-    tags: [
-      {
-        id: 1,
-        name: 'React.js',
-        path: '/assets/react.svg',
-      },
-      {
-        id: 2,
-        name: 'Next.js',
-        path: '/assets/nextjs.svg',
-      },
-      {
-        id: 3,
-        name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
-      },
-      {
-        id: 4,
-        name: 'TypeScript',
-        path: '/assets/typescript.png',
-      },
-      {
-        id: 5,
-        name: 'MongoDB',
-        path: '/assets/mongodb.svg',
-      },
-    ],
-  },
+  // {
+  //   title: 'CarePulse - Health Management System',
+  //   titleTR: 'CarePulse - Sağlık Yönetim Sistemi',
+  //   desc: 'An innovative healthcare platform designed to streamline essential medical processes. It simplifies patient registration, appointment scheduling, and medical record management, providing a seamless experience for both healthcare providers and patients.',
+  //   descTR:
+  //     'Temel tıbbi süreçleri kolaylaştırmak için tasarlanmış yenilikçi bir sağlık platformudur. Hasta kaydı, randevu planlama ve tıbbi kayıt yönetimini basitleştirerek hem sağlık hizmeti sağlayıcılar, hem de hastalar için sorunsuz bir deneyim sunar.',
+  //   subdesc:
+  //     'With a focus on efficiency, CarePulse integrantes complex forms by using Next.js, Appwrite, Twillio and Sentry that enhance operational workflows.',
+  //   subdescTR:
+  //     'CarePulse, Next.js, Appwrite, Twilio ve Sentry kullanarak karmaşık formları entegre ederek operasyonel iş akışını geliştirir ve hastalara bilgilerine ulaşmakta kolaylık sağlayarak yardımcı olur',
+  //   href: 'https://healthcare-mauve.vercel.app',
+  //   texture: '/textures/project/project3.mp4',
+  //   logo: '/assets/project-logo3.png',
+  //   logoStyle: {
+  //     backgroundColor: '#60f5a1',
+  //     background:
+  //       'linear-gradient(0deg, #60F5A150, #60F5A150), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)',
+  //     border: '0.2px solid rgba(208, 213, 221, 1)',
+  //     boxShadow: '0px 0px 60px 0px rgba(35, 131, 96, 0.3)',
+  //   },
+  //   spotlight: '/assets/spotlight3.png',
+  //   tags: [
+  //     {
+  //       id: 1,
+  //       name: 'React.js',
+  //       path: '/assets/react.svg',
+  //     },
+  //     {
+  //       id: 2,
+  //       name: 'Next.js',
+  //       path: '/assets/nextjs.svg',
+  //     },
+  //     {
+  //       id: 3,
+  //       name: 'TailwindCSS',
+  //       path: 'assets/tailwindcss.png',
+  //     },
+  //     {
+  //       id: 4,
+  //       name: 'TypeScript',
+  //       path: '/assets/typescript.png',
+  //     },
+  //     {
+  //       id: 5,
+  //       name: 'MongoDB',
+  //       path: '/assets/mongodb.svg',
+  //     },
+  //   ],
+  // },
   {
     title: 'TikTik - Share and Discover Engaging Videos',
     titleTR: 'TikTik - İlgi Çekici Videoları Paylaş ve Keşfet',
@@ -515,31 +569,31 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
     cubePosition: isSmall
       ? [4, -5, 0]
       : isMobile
-      ? [5, -5, 0]
-      : isTablet
-      ? [5, -5, 0]
-      : [9, -5.5, 0],
+        ? [5, -5, 0]
+        : isTablet
+          ? [5, -5, 0]
+          : [9, -5.5, 0],
     reactLogoPosition: isSmall
       ? [3, 4, 0]
       : isMobile
-      ? [5, 4, 0]
-      : isTablet
-      ? [5, 4, 0]
-      : [12, 3, 0],
+        ? [5, 4, 0]
+        : isTablet
+          ? [5, 4, 0]
+          : [12, 3, 0],
     ringPosition: isSmall
       ? [-5, 7, 0]
       : isMobile
-      ? [-10, 10, 0]
-      : isTablet
-      ? [-12, 10, 0]
-      : [-24, 10, 0],
+        ? [-10, 10, 0]
+        : isTablet
+          ? [-12, 10, 0]
+          : [-24, 10, 0],
     targetPosition: isSmall
       ? [-5, -10, -10]
       : isMobile
-      ? [-9, -10, -10]
-      : isTablet
-      ? [-11, -7, -10]
-      : [-13, -13, -10],
+        ? [-9, -10, -10]
+        : isTablet
+          ? [-11, -7, -10]
+          : [-13, -13, -10],
   };
 };
 

@@ -1,12 +1,36 @@
 import Globe from 'react-globe.gl';
 import Button from '../components/Button';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import { aboutTexts } from '../constants';
 import { useLanguage } from '../context/LanguageContext';
+
+const GLOBE_SIZE = 326;
+const EARTH_NIGHT = '/textures/globe/earth-night.jpg';
+const EARTH_BUMP = '/textures/globe/earth-topology.png';
 
 const About = () => {
   const { t } = useLanguage();
   const [hasCopied, setHasCopied] = useState(false);
+  const globeWrapRef = useRef(null);
+  const [globeInView, setGlobeInView] = useState(true);
+  const prefersReducedMotion = useMediaQuery({
+    query: '(prefers-reduced-motion: reduce)',
+  });
+
+  useEffect(() => {
+    const el = globeWrapRef.current;
+    if (!el) return undefined;
+    const io = new IntersectionObserver(
+      ([entry]) => setGlobeInView(entry.isIntersecting),
+      { rootMargin: '120px 0px', threshold: 0 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  const showGlobeWebGL = globeInView && !prefersReducedMotion;
+
   const handleCopy = () => {
     navigator.clipboard.writeText('zafercagatayumut@gmail.com');
     setHasCopied(true);
@@ -55,26 +79,40 @@ const About = () => {
         </div>
         <div className="col-span-1 xl:row-span-4">
           <div className="grid-container">
-            <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center">
-              <Globe
-                height={326}
-                width={326}
-                backgroundColor="rgba(0,0,0,0)"
-                backgroundImageOpacity={0.5}
-                showAtmosphere
-                showGraticules
-                globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
-                bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
-                labelsData={[
-                  {
-                    lat: 41.015137,
-                    lng: 28.97953,
-                    text: "I'm here!",
-                    color: 'white',
-                    size: 30,
-                  },
-                ]}
-              />
+            <div
+              ref={globeWrapRef}
+              className="rounded-3xl w-full sm:h-[326px] min-h-[326px] h-fit flex justify-center items-center"
+            >
+              {showGlobeWebGL ? (
+                <Globe
+                  height={GLOBE_SIZE}
+                  width={GLOBE_SIZE}
+                  backgroundColor="rgba(0,0,0,0)"
+                  backgroundImageOpacity={0.5}
+                  showAtmosphere
+                  showGraticules
+                  globeImageUrl={EARTH_NIGHT}
+                  bumpImageUrl={EARTH_BUMP}
+                  labelsData={[
+                    {
+                      lat: 41.015137,
+                      lng: 28.97953,
+                      text: "I'm here!",
+                      color: 'white',
+                      size: 30,
+                    },
+                  ]}
+                />
+              ) : (
+                <div
+                  role="img"
+                  aria-label="Earth"
+                  className="rounded-3xl w-[326px] h-[326px] max-w-full aspect-square mx-auto bg-cover bg-center border border-black-300"
+                  style={{
+                    backgroundImage: `url(${EARTH_NIGHT})`,
+                  }}
+                />
+              )}
             </div>
             <div>
               <p className="grid-headtext">

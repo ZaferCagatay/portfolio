@@ -1,4 +1,3 @@
-import React, { useRef } from 'react';
 import { Float, useGLTF } from '@react-three/drei';
 
 const ReactLogo = (props) => {
@@ -19,7 +18,5 @@ const ReactLogo = (props) => {
     </Float>
   );
 };
-
-useGLTF.preload('/models/react.glb');
 
 export default ReactLogo;
