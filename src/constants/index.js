@@ -37,17 +37,19 @@ export const aboutTexts = [
     headtext: "Hi, I'm Zafer",
     headtextTR: 'Merhaba, ben Zafer',
     subtext:
-      'With 4 years of experience in frontend and backend development, I focus on creating dynamic and visually engaging websites. My passion lies in crafting seamless, user-focused web applications while continuously learning, adapting, and embracing new challenges.',
+      'With 6 years of experience in frontend and backend development, I build scalable, user-focused web and mobile applications with a strong focus on performance, usability, and modern design. I enjoy working across the full stack, learning new technologies, and turning complex ideas into production-ready products.',
+
     subtextTR:
-      '4 yıllık frontend ve backend geliştirme deneyimimle, dinamik ve görsel olarak etkileyici web siteleri oluşturmaya odaklanıyorum. Tutkum, sürekli öğrenerek, uyum sağlayarak ve yeni zorlukları kucaklayarak kusursuz, kullanıcı odaklı web uygulamaları geliştirmektir.',
+      '6 yıllık frontend ve backend geliştirme deneyimimle; performans, kullanılabilirlik ve modern tasarıma odaklanan ölçeklenebilir web ve mobil uygulamalar geliştiriyorum. Full-stack geliştirme süreçlerinde aktif olarak çalışmayı, yeni teknolojiler öğrenmeyi ve karmaşık fikirleri üretime hazır ürünlere dönüştürmeyi seviyorum.',
   },
   {
     headtext: 'Tech Stack',
     headtextTR: 'Teknoloji Yığını',
     subtext:
-      'In addition to frontend expertise, I bring strong backend skills in Express.js, SQL databases, .NET APIs, C#, and Node.js. I also have expertise in Python, having developed an application that integrated machine learning to solve complex problems. My adaptability ensures innovative and efficient solutions across diverse technologies.',
+      'Alongside frontend development, I have strong backend experience with Node.js, Express.js, .NET Web API, C#, SQL databases, Docker, and scalable system architecture. I also have experience with Python and automation-focused applications, allowing me to build efficient and adaptable solutions across different technologies and platforms.',
+
     subtextTR:
-      "Frontend uzmanlığının yanı sıra, Express.js, SQL veritabanları, .NET API’leri, C# ve Node.js gibi güçlü backend becerilere sahibim. Ayrıca, C#, Python ve C++'ta da farklı alanlarda deneyimlerim var . Yeni teknolojilere uyum sağlayabilme yeteneğim, yenilikçi ve verimli çözümler yaratabilmemi sağlar.",
+      'Frontend geliştirmenin yanı sıra; Node.js, Express.js, .NET Web API, C#, SQL veritabanları, Docker ve ölçeklenebilir sistem mimarileri konusunda güçlü backend deneyimine sahibim. Ayrıca Python ve otomasyon odaklı uygulamalar üzerinde çalışarak farklı teknolojiler ve platformlarda verimli ve uyarlanabilir çözümler geliştirme deneyimi kazandım.',
   },
   {
     headtext: 'I work remotely across most timezones.',
@@ -59,9 +61,10 @@ export const aboutTexts = [
     headtext: 'My Passion for Coding',
     headtextTR: 'Kodlamaya Olan Tutkum',
     subtext:
-      "I love solving problems and building creative solutions through code. For me, coding is more than a profession—it's a passion that drives me to continuously learn, grow, and create impactful applications.",
+      'I enjoy building products, solving technical problems, and turning ideas into real-world applications. I’m constantly improving my skills, exploring new technologies, and focusing on creating fast, reliable, and user-focused software.',
+
     subtextTR:
-      'Sorunları çözmeyi ve kod aracılığıyla yaratıcı çözümler üretmeyi seviyorum. Benim için kodlama, bir meslekten daha fazlası—sürekli öğrenmeme, gelişmeme ve etkili uygulamalar yaratmama ilham veren bir tutkudur.',
+      'Ürün geliştirmeyi, teknik problemleri çözmeyi ve fikirleri gerçek uygulamalara dönüştürmeyi seviyorum. Sürekli kendimi geliştirmeye, yeni teknolojiler öğrenmeye ve hızlı, güvenilir, kullanıcı odaklı yazılımlar oluşturmaya odaklanıyorum.',
   },
   {
     headtext: 'Contact me',
@@ -607,9 +610,11 @@ export const workExperiences = [
     posTR: 'Serbest Yazılım Geliştirici',
     duration: '2023 - Present',
     title:
-      'Throughout my freelance career, I’ve built diverse solutions — from developing a Python application for gamers to delivering a full-scale, multi-tenant platform with a complete partner dashboard, frontend, admin panel, and database architecture. A highlight was building a robust, user-friendly admin panel for a local company, which continues to enhance their operations and increase efficiency by 10x.',
+      'Throughout my freelance career, I’ve developed a wide range of full-stack solutions — from automation-focused desktop applications to AI-powered mobile apps and multi-tenant SaaS platforms. My projects include Pavlov, an AI-supported pet care application built with React Native and Node.js, and Karta, a finance and CRM-focused SaaS platform featuring operational management, AI-powered financial analysis, and scalable multi-tenant architecture. I have also developed robust admin panels and operational systems for local businesses, helping streamline workflows and significantly improve efficiency.',
+
     titleTR:
-      'Serbest çalışma kariyerim boyunca; oyuncular için geliştirdiğim bir Python uygulamasından, iş ortakları paneli, frontend, yönetim paneli ve veritabanı mimarisiyle birlikte tam kapsamlı, çok kiracılı (multi-tenant) bir platforma kadar çeşitli çözümler geliştirdim. Öne çıkanlardan biri, yerel bir şirket için güçlü ve kullanıcı dostu bir yönetim paneli oluşturmaktı. Bu, operasyonlarını geliştirmeye ve verimliliği 10 kat artırmaya devam ediyor.',
+      'Serbest çalışma kariyerim boyunca; otomasyon odaklı masaüstü uygulamalardan, AI destekli mobil uygulamalara ve çok kiracılı (multi-tenant) SaaS platformlarına kadar geniş kapsamlı full-stack projeler geliştirdim. Projelerim arasında React Native ve Node.js kullanılarak geliştirilen AI destekli pet care uygulaması Pavlov ile operasyon yönetimi, AI destekli finansal analiz ve ölçeklenebilir multi-tenant mimari özelliklerine sahip finans ve CRM odaklı SaaS platformu Karta bulunmaktadır. Ayrıca yerel firmalar için güçlü yönetim panelleri ve operasyon sistemleri geliştirerek iş süreçlerinin optimize edilmesine ve verimliliğin önemli ölçüde artırılmasına katkı sağladım.',
+
     icon: '/assets/freelancer.svg',
     animation: 'dance',
   },
