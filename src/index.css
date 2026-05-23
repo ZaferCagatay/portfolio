@@ -213,3 +213,10 @@ body {
     transform: rotate(0deg);
   }
 }
+
+@media (max-width: 440px) {
+  .hero_tag {
+    font-size: 1.55rem;
+    line-height: 1.25 !important;
+  }
+}

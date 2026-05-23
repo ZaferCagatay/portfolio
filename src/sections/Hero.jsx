@@ -22,8 +22,19 @@ const Hero = () => {
   const isSmall = useMediaQuery({ maxWidth: 440 });
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
+  const isCompactDesktopWidth = useMediaQuery({
+    minWidth: 1025,
+    maxWidth: 1440,
+  });
+  const isShortDesktop = useMediaQuery({ minWidth: 1025, maxHeight: 900 });
+  const isCompactDesktop = isCompactDesktopWidth || isShortDesktop;
 
-  const sizes = calculateSizes(isSmall, isMobile, isTablet);
+  const sizes = calculateSizes({
+    isSmall,
+    isMobile,
+    isTablet,
+    isCompactDesktop,
+  });
 
   return (
     <section id="home" className="min-h-screen w-full flex flex-col relative">
@@ -42,7 +53,7 @@ const Hero = () => {
         </motion.p>
         <motion.p
           variants={staggerItem}
-          className="hero_tag text-gray_gradient"
+          className="hero_tag mx-auto max-w-[92vw] text-gray_gradient"
         >
           {t(heroTexts[1], heroTextsTR[1])}
         </motion.p>
