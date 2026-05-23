@@ -5,11 +5,20 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   build: {
+    modulePreload: {
+      resolveDependencies(filename, deps, { hostType }) {
+        if (hostType !== 'html') return deps;
+
+        return deps.filter(
+          (dep) => !dep.includes('three-') && !dep.includes('r3f-')
+        );
+      },
+    },
     rollupOptions: {
       output: {
-        manualChunks: {
-          three: ['three'],
-          r3f: ['@react-three/fiber', '@react-three/drei'],
+        manualChunks(id) {
+          if (id.includes('/node_modules/three/')) return 'three';
+          if (id.includes('\\node_modules\\three\\')) return 'three';
         },
       },
     },

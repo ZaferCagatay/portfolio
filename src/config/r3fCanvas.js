@@ -3,6 +3,7 @@
 export const r3fGl = {
   powerPreference: 'high-performance',
   antialias: false,
+  failIfMajorPerformanceCaveat: false,
 };
 
 export const r3fPerformance = {

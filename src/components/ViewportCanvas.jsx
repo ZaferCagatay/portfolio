@@ -5,6 +5,8 @@ import {
   r3fGl,
   r3fPerformance,
 } from '../config/r3fCanvas';
+import CanvasFallback from './CanvasFallback';
+import ErrorBoundary from './ErrorBoundary';
 
 /**
  * Wraps R3F Canvas with intersection observer: pauses the render loop when off-screen.
@@ -40,17 +42,20 @@ const ViewportCanvas = ({
   }, []);
 
   return (
-    <div ref={containerRef} className={className}>
-      <Canvas
-        frameloop={inView ? 'always' : 'never'}
-        dpr={getCanvasDpr(isMobile)}
-        gl={r3fGl}
-        performance={r3fPerformance}
-        {...canvasProps}
-      >
-        {children}
-      </Canvas>
-    </div>
+    <ErrorBoundary fallback={<CanvasFallback className={className} />}>
+      <div ref={containerRef} className={className}>
+        <Canvas
+          fallback={<CanvasFallback className="h-full min-h-[16rem] w-full" />}
+          frameloop={inView ? 'always' : 'never'}
+          dpr={getCanvasDpr(isMobile)}
+          gl={r3fGl}
+          performance={r3fPerformance}
+          {...canvasProps}
+        >
+          {children}
+        </Canvas>
+      </div>
+    </ErrorBoundary>
   );
 };
 
