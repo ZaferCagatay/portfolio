@@ -78,13 +78,13 @@ export const myProjects = [
   {
     title: 'Karta — Finance. CRM. Insight. Unified.',
     titleTR: 'Karta — Finans, CRM ve Analiz. Hepsi Bir.',
-    desc: 'Karta unifies finance, CRM, and operations in one place. Monitor cash flow and aging receivables, manage your sales pipeline from lead to contract, and get an AI CFO with company health scoring—so you spot risks and opportunities before they turn into surprises.',
+    desc: 'Karta is a multi-tenant SaaS platform built with Next.js landing page, Vue.js client and admin dashboards, and a Node.js backend with PostgreSQL unifying finance, CRM, and operations for growing businesses.',
     descTR:
-      'Karta; finans, CRM ve operasyonu tek çatıda birleştirir. Nakit akışı ve alacakları izleyin, adaydan sözleşmeye satış sürecini yönetin; AI CFO ve şirket sağlığı skoru ile risk ve fırsatları daha sürpriz haline gelmeden erkenden görün.',
+      'Karta; Next.js landing page, Vue.js istemci ve admin panelleri ile Node.js backend ve PostgreSQL kullanan multi-tenant bir SaaS platformudur — finans, CRM ve operasyonu büyüyen işletmeler için tek çatıda birleştirir.',
     subdesc:
-      'A decision layer for growing teams: recurring revenue and contracts, Excel-friendly imports, RBAC and multi-company support, plus scenario analysis and natural-language Q&A via the AI CFO.',
+      'Granular RBAC with permission-based role creation, OpenAI-powered AI CFO with persistent memory and client-aware responses, cash flow tracking, CRM pipeline, multi-company support, and Excel-friendly data imports.',
     subdescTR:
-      'Büyüyen ekipler için karar katmanı: abonelik ve sözleşme yönetimi, Excel entegrasyonu, RBAC ve çoklu şirket desteği; AI CFO ile gelişmiş senaryo analizi ve doğal dilde interaktif soru-cevap.',
+      'İzin tabanlı granüler RBAC, kalıcı hafızalı ve müşteri verilerini bilen OpenAI destekli AI CFO, nakit akışı takibi, CRM pipeline, çoklu şirket desteği ve Excel uyumlu veri aktarımı.',
     href: 'https://getkarta.app',
     texture: '/textures/project/project3.mp4',
     logo: '/assets/project-karta.ico',
@@ -137,13 +137,13 @@ export const myProjects = [
   {
     title: 'Pavlov - Pet Care App',
     titleTR: 'Pavlov - Hayvan Bakım Uygulaması',
-    desc: 'Pavlov helps pet owners manage daily care routines in one place. Track feeding, walks, medications, and health records, receive smart reminders, and get personalized AI guidance, so your pet stays happy, healthy, and cared for every day.',
+    desc: 'Built with React Native and TypeScript, Pavlov features a Node.js backend, PostgreSQL for secure cloud sync, SQLite for offline-first local storage, and OpenAI integration for AI-powered chat and dynamic mood image generation.',
     descTR:
-      'Pavlov; evcil hayvan bakımını tek bir yerde yönetmenizi sağlar. Beslenme, yürüyüş, ilaç ve sağlık kayıtlarını takip edin; akıllı hatırlatmalar alın ve kişiselleştirilmiş AI önerileriyle dostunuzun her gün mutlu ve sağlıklı kalmasına yardımcı olun.',
+      'React Native ve TypeScript ile geliştirilen Pavlov; Node.js backend, güvenli bulut senkronizasyonu için PostgreSQL, çevrimdışı depolama için SQLite ve AI sohbet ile dinamik ruh hali görseli üretimi için OpenAI entegrasyonu içerir.',
     subdesc:
-      'A smart companion for modern pet parents: daily task tracking, health and weight monitoring, AI-powered pet assistance, customizable reminders, and interactive pet moods tailored to your companion.',
+      'Push notification system, health and weight tracking, breed-specific AI recommendations, customizable care routines, offline-first architecture with real-time cloud sync, and AI mood image generation per pet.',
     subdescTR:
-      'Modern evcil hayvan sahipleri için akıllı yardımcı: günlük görev takibi, sağlık ve kilo izleme, AI destekli pet asistanı, özelleştirilebilir hatırlatıcılar ve dostunuza özel interaktif ruh hali sistemi.',
+      'Akıllı bildirimler, sağlık ve kilo takibi, ırka özel AI önerileri, özelleştirilebilir bakım rutinleri, gerçek zamanlı bulut senkronizasyonlu çevrimdışı yapı ve her evcil hayvana özel AI ruh hali görselleri.',
     href: 'https://pavlovpet.app',
     texture: '/textures/project/pavlov-showcase.mp4',
     logo: '/assets/pavlovIcon.png',
@@ -194,13 +194,13 @@ export const myProjects = [
   {
     title: 'Podcastr - AI Podcast Platform',
     titleTR: 'Podcastr - Yapay Zeka Podcast Platformu',
-    desc: 'Podcastr is a revolutionary Software-as-a-Service platform that transforms the way podcasts are created. With advanced AI-powered features like text-to-multiple-voices functionality, it allows creators to generate diverse voiceovers from a single text input.',
+    desc: 'Podcastr is a serverless AI podcast platform built with Next.js 14 and TypeScript, where users can generate multi-voice audio from text using OpenAI, publish episodes to the platform, or download them directly.',
     descTR:
-      'Podcastr, podcast lerin oluşturulma şekline yeni bir soluk getiren, devrim niteliğinde bir SaaS platformudur. Gelişmiş yapay zeka özellikleriyle, tek bir metin girişinden çeşitli seslendirmeler oluşturulabilmesini sağlar.',
+      'Podcastr; Next.js 14 ve TypeScript ile geliştirilmiş sunucusuz bir AI podcast platformudur. OpenAI kullanarak metinden çok sesli ses üretebilir, bölümleri platforma yayınlayabilir veya doğrudan indirebilirsiniz.',
     subdesc:
-      'Built as a unique Software-as-a-Service app with Next.js 14, Tailwind CSS, TypeScript, Framer Motion and Convex, Podcastr is designed for optimal performance and scalability.',
+      'Serverless architecture via Next.js API routes, OpenAI text-to-speech with male and female voice options, object storage for audio files, Tailwind CSS and Framer Motion for a polished social listening experience.',
     subdescTR:
-      'Next.js 14, Tailwind CSS, TypeScript, Framer Motion ve Convex kullanılarak geliştirilmiş bir SaaS uygulaması olan Podcastr, optimum performans ve ölçeklenebilirlik için tasarlanmıştır.',
+      'Next.js API rotaları ile sunucusuz mimari, erkek ve kadın ses seçenekleriyle OpenAI metin-ses dönüşümü, ses dosyaları için nesne depolama, Tailwind CSS ve Framer Motion ile sosyal dinleme deneyimi.',
     href: 'https://podcastr-ai-seven.vercel.app',
     texture: '/textures/project/project1.mp4',
     logo: '/assets/project-logo1.png',
