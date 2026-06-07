@@ -6,17 +6,24 @@ import * as THREE from 'three';
 
 const MONITOR_SCREEN_NAME = 'monitor-screen';
 
-const DemoComputer = (props) => {
+const DemoComputer = ({ texture, ...groupProps }) => {
   const groupRef = useRef();
   const { scene } = useGLTF('/models/computer.glb');
 
   const clonedScene = useMemo(() => scene.clone(true), [scene]);
 
-  const videoSrc = props.texture ?? '/textures/project/project1.mp4';
+  const videoSrc = texture ?? '/textures/project/project1.mp4';
   const txt = useVideoTexture(videoSrc);
 
   useEffect(() => {
-    if (txt) txt.flipY = false;
+    if (!txt) return;
+
+    txt.flipY = false;
+    txt.colorSpace = THREE.SRGBColorSpace;
+    txt.minFilter = THREE.LinearFilter;
+    txt.magFilter = THREE.LinearFilter;
+    txt.generateMipmaps = false;
+    txt.needsUpdate = true;
   }, [txt]);
 
   useEffect(() => {
@@ -28,12 +35,15 @@ const DemoComputer = (props) => {
     });
     if (!monitor) return;
 
-    const previous = monitor.material;
-    monitor.material = new THREE.MeshBasicMaterial({
+    const screenMaterial = new THREE.MeshBasicMaterial({
       map: txt,
       toneMapped: false,
     });
-    if (previous) previous.dispose?.();
+    monitor.material = screenMaterial;
+
+    return () => {
+      screenMaterial.dispose();
+    };
   }, [clonedScene, txt]);
 
   useEffect(() => {
@@ -60,7 +70,7 @@ const DemoComputer = (props) => {
   }, [videoSrc, clonedScene]);
 
   return (
-    <group ref={groupRef} {...props} dispose={null}>
+    <group ref={groupRef} {...groupProps} dispose={null}>
       <primitive object={clonedScene} />
     </group>
   );

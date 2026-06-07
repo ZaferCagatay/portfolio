@@ -19,6 +19,7 @@ import ErrorBoundary from './ErrorBoundary';
 const ViewportCanvas = ({
   defaultVisible = false,
   isMobile = false,
+  dprOverride,
   className = 'w-full h-full',
   children,
   ...canvasProps
@@ -47,7 +48,7 @@ const ViewportCanvas = ({
         <Canvas
           fallback={<CanvasFallback className="h-full min-h-[16rem] w-full" />}
           frameloop={inView ? 'always' : 'never'}
-          dpr={getCanvasDpr(isMobile)}
+          dpr={dprOverride ?? getCanvasDpr(isMobile)}
           gl={r3fGl}
           performance={r3fPerformance}
           {...canvasProps}

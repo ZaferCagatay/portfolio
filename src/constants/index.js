@@ -99,18 +99,18 @@ export const myProjects = [
     tags: [
       {
         id: 1,
-        name: 'React.js',
-        path: '/assets/react.svg',
-      },
-      {
-        id: 2,
         name: 'Next.js',
         path: '/assets/nextjs.svg',
       },
       {
-        id: 3,
+        id: 2,
         name: 'TailwindCSS',
         path: '/assets/tailwindcss.png',
+      },
+      {
+        id: 3,
+        name: 'Node.js',
+        path: '/assets/nodejs.svg',
       },
       {
         id: 4,
@@ -124,6 +124,68 @@ export const myProjects = [
       },
       {
         id: 6,
+        name: 'API',
+        path: '/assets/api.svg',
+      },
+      {
+        id: 7,
+        name: 'PostgreSQL',
+        path: '/assets/postgresql.svg',
+      },
+    ],
+  },
+  {
+    title: 'Pavlov - Pet Care App',
+    titleTR: 'Pavlov - Hayvan Bakım Uygulaması',
+    desc: 'Pavlov helps pet owners manage daily care routines in one place. Track feeding, walks, medications, and health records, receive smart reminders, and get personalized AI guidance, so your pet stays happy, healthy, and cared for every day.',
+    descTR:
+      'Pavlov; evcil hayvan bakımını tek bir yerde yönetmenizi sağlar. Beslenme, yürüyüş, ilaç ve sağlık kayıtlarını takip edin; akıllı hatırlatmalar alın ve kişiselleştirilmiş AI önerileriyle dostunuzun her gün mutlu ve sağlıklı kalmasına yardımcı olun.',
+    subdesc:
+      'A smart companion for modern pet parents: daily task tracking, health and weight monitoring, AI-powered pet assistance, customizable reminders, and interactive pet moods tailored to your companion.',
+    subdescTR:
+      'Modern evcil hayvan sahipleri için akıllı yardımcı: günlük görev takibi, sağlık ve kilo izleme, AI destekli pet asistanı, özelleştirilebilir hatırlatıcılar ve dostunuza özel interaktif ruh hali sistemi.',
+    href: 'https://pavlovpet.app',
+    texture: '/textures/project/pavlov-showcase.mp4',
+    logo: '/public/assets/pavlov-icon.png',
+    logoStyle: {
+      backgroundColor: '#F0EBE3',
+      border: '0.2px solid #36201D',
+      boxShadow: '0px 0px 60px 0px #AA3C304D',
+    },
+    spotlight: '/assets/spotlight2.png',
+    tags: [
+      {
+        id: 1,
+        name: 'React Native',
+        path: '/assets/react.svg',
+      },
+      {
+        id: 2,
+        name: 'Typescript',
+        path: '/assets/typescript.png',
+      },
+      {
+        id: 3,
+        name: 'AI',
+        path: '/assets/ai.svg',
+      },
+      {
+        id: 4,
+        name: 'Node.js',
+        path: '/assets/nodejs.svg',
+      },
+      {
+        id: 5,
+        name: 'Sqlite',
+        path: '/assets/sqlite.svg',
+      },
+      {
+        id: 6,
+        name: 'PostgreSQL',
+        path: '/assets/postgresql.svg',
+      },
+      {
+        id: 7,
         name: 'API',
         path: '/assets/api.svg',
       },
@@ -430,43 +492,43 @@ export const myProjects = [
       },
     ],
   },
-  {
-    title: 'YouTube Clone - Watch and Explore Videos',
-    titleTR: 'YouTube Klonu - Videoları İzle ve Keşfet',
-    desc: 'YouTube Clone is a sleek platform for discovering and watching videos with a design inspired by YouTube. Search for videos and channels, explore categories, and dive into content effortlessly.',
-    descTR:
-      'YouTube Klonu, YouTube’dan ilham alan tasarımıyla videoları keşfetmek ve izlemek için şık bir platformdur. Videoları ve kanalları arayın, kategorilere göz atın ve içeriklere kolayca dalın.',
-    subdesc:
-      'With YouTube Clone, users can view video details like views, browse channels and subscriber counts, and navigate seamlessly between videos and channels. Built for video enthusiasts, it delivers a streamlined, immersive viewing experience.',
-    subdescTR:
-      'YouTube Klonu, kullanıcıların video detaylarını, görüntülenme sayılarını görmesini, kanallara göz atmasını ve abonelik sayılarını takip etmesini sağlar. Video severler için tasarlanmış bu platform, akıcı ve sürükleyici bir izleme deneyimi sunar.',
-    href: 'https://charming-lebkuchen-045546.netlify.app',
-    texture: '/textures/project/project7.mp4',
-    logo: 'https://i.ibb.co/s9Qys2j/logo.png',
-    logoStyle: {
-      backgroundColor: '#2A1816',
-      border: '0.2px solid #36201D',
-      boxShadow: '0px 0px 60px 0px #AA3C304D',
-    },
-    spotlight: '/assets/spotlight2.png',
-    tags: [
-      {
-        id: 1,
-        name: 'React.js',
-        path: '/assets/react.svg',
-      },
-      {
-        id: 2,
-        name: 'JavaScript',
-        path: '/assets/javascript.svg',
-      },
-      {
-        id: 3,
-        name: 'API',
-        path: '/assets/api.svg',
-      },
-    ],
-  },
+  // {
+  //   title: 'YouTube Clone - Watch and Explore Videos',
+  //   titleTR: 'YouTube Klonu - Videoları İzle ve Keşfet',
+  //   desc: 'YouTube Clone is a sleek platform for discovering and watching videos with a design inspired by YouTube. Search for videos and channels, explore categories, and dive into content effortlessly.',
+  //   descTR:
+  //     'YouTube Klonu, YouTube’dan ilham alan tasarımıyla videoları keşfetmek ve izlemek için şık bir platformdur. Videoları ve kanalları arayın, kategorilere göz atın ve içeriklere kolayca dalın.',
+  //   subdesc:
+  //     'With YouTube Clone, users can view video details like views, browse channels and subscriber counts, and navigate seamlessly between videos and channels. Built for video enthusiasts, it delivers a streamlined, immersive viewing experience.',
+  //   subdescTR:
+  //     'YouTube Klonu, kullanıcıların video detaylarını, görüntülenme sayılarını görmesini, kanallara göz atmasını ve abonelik sayılarını takip etmesini sağlar. Video severler için tasarlanmış bu platform, akıcı ve sürükleyici bir izleme deneyimi sunar.',
+  //   href: 'https://charming-lebkuchen-045546.netlify.app',
+  //   texture: '/textures/project/project7.mp4',
+  //   logo: 'https://i.ibb.co/s9Qys2j/logo.png',
+  //   logoStyle: {
+  //     backgroundColor: '#2A1816',
+  //     border: '0.2px solid #36201D',
+  //     boxShadow: '0px 0px 60px 0px #AA3C304D',
+  //   },
+  //   spotlight: '/assets/spotlight2.png',
+  //   tags: [
+  //     {
+  //       id: 1,
+  //       name: 'React.js',
+  //       path: '/assets/react.svg',
+  //     },
+  //     {
+  //       id: 2,
+  //       name: 'JavaScript',
+  //       path: '/assets/javascript.svg',
+  //     },
+  //     {
+  //       id: 3,
+  //       name: 'API',
+  //       path: '/assets/api.svg',
+  //     },
+  //   ],
+  // },
   {
     title: 'Therapy Landing Page - Learn Services',
     titleTR: 'Terapi Hizmeti Tanıtım- Hizmetleri Keşfet',
@@ -592,7 +654,7 @@ export const calculateSizes = ({
           ? [4.4, -5, 0]
           : isCompactDesktop
             ? [7.4, -5.05, 0]
-          : [9, -5.5, 0],
+            : [9, -5.5, 0],
     reactLogoPosition: isSmall
       ? [2.1, 2.4, 0]
       : isMobile
@@ -601,7 +663,7 @@ export const calculateSizes = ({
           ? [7.4, 7.2, 0]
           : isCompactDesktop
             ? [11.2, 6.1, 0]
-          : [12, 3, 0],
+            : [12, 3, 0],
     ringPosition: isSmall
       ? [-2.6, 6.5, 0]
       : isMobile
@@ -610,7 +672,7 @@ export const calculateSizes = ({
           ? [-15, 12, 0]
           : isCompactDesktop
             ? [-24, 11.2, 0]
-          : [-24, 10, 0],
+            : [-24, 10, 0],
     targetPosition: isSmall
       ? [-5, -10, -10]
       : isMobile
@@ -619,7 +681,7 @@ export const calculateSizes = ({
           ? [-11, -7, -10]
           : isCompactDesktop
             ? [-10.5, -8, -10]
-          : [-13, -13, -10],
+            : [-13, -13, -10],
   };
 };
 

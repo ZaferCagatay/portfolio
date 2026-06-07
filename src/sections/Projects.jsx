@@ -17,6 +17,10 @@ import {
 const projectCount = myProjects.length;
 
 const slideTransition = { duration: 0.38, ease: [0.22, 1, 0.36, 1] };
+const projectPreviewDpr = {
+  mobile: [1, 1.5],
+  desktop: [1, 2],
+};
 
 const Projects = () => {
   const { t } = useLanguage();
@@ -25,6 +29,9 @@ const Projects = () => {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
 
   const currentProject = myProjects[selectedProjectIndex];
+  const previewDpr = isMobile
+    ? projectPreviewDpr.mobile
+    : projectPreviewDpr.desktop;
 
   const handleNavigation = (direction) => {
     setSelectedProjectIndex((prev) => {
@@ -161,13 +168,14 @@ const Projects = () => {
         >
           <ViewportCanvas
             isMobile={isMobile}
+            dprOverride={previewDpr}
             className="w-full h-full min-h-[24rem]"
           >
             <ambientLight intensity={Math.PI} />
             <directionalLight position={[10, 10, 5]} />
             <Center>
               <Suspense fallback={<CanvasLoader />}>
-                <group scale={2} position={[0, -3, 0]} rotation={[0, -0.1, 0]}>
+                <group scale={2} position={[0, -3, 0]} rotation={[0, -0.04, 0]}>
                   <DemoComputer texture={currentProject.texture} />
                 </group>
               </Suspense>
