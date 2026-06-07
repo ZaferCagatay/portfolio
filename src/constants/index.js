@@ -146,7 +146,7 @@ export const myProjects = [
       'Modern evcil hayvan sahipleri için akıllı yardımcı: günlük görev takibi, sağlık ve kilo izleme, AI destekli pet asistanı, özelleştirilebilir hatırlatıcılar ve dostunuza özel interaktif ruh hali sistemi.',
     href: 'https://pavlovpet.app',
     texture: '/textures/project/pavlov-showcase.mp4',
-    logo: '/public/assets/pavlov-icon.png',
+    logo: '/public/assets/project-logo12.png',
     logoStyle: {
       backgroundColor: '#F0EBE3',
       border: '0.2px solid #36201D',
